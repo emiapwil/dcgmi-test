@@ -17,7 +17,7 @@ healthchecks/
 
 | Test | Description |
 |------|-------------|
-| `dcgm` | Build an image that can execute DCGM (Data Center GPU Manager) on a host |
+| `dcgm` | Build an image that can execute DCGM (Data Center GPU Manager) on a host. Based on Ubuntu 24.04 with DCGM, dcgm-exporter, dcgm-field-watch, and dcgm-devel packages. |
 
 ## Usage
 
