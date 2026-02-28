@@ -1,9 +1,9 @@
-# DCGM Health Check - CUDA 12 version
+# DCGM Health Check
 # Build an image that can execute DCGM (Data Center GPU Manager) on a host
 #
-# Build: docker build -t dcgm-test-cuda12 ./dcgm/
-# Run diagnose level 2: docker run --rm --gpus all --cap-add SYS_ADMIN --entrypoint="" dcgm-test-cuda12 dcgmi diag -r 2
-# Run diagnose level 3: docker run --rm --gpus all --cap-add SYS_ADMIN --entrypoint="" dcgm-test-cuda12 dcgmi diag -r 3
+# Build: docker build -t dcgm-test ./dcgm/
+# Run diagnose level 2: docker run --rm --gpus all --cap-add SYS_ADMIN --entrypoint="" dcgm-test dcgmi diag -r 2
+# Run diagnose level 3: docker run --rm --gpus all --cap-add SYS_ADMIN --entrypoint="" dcgm-test dcgmi diag -r 3
 
 FROM ubuntu:24.04
 
@@ -27,7 +27,7 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86
 # Update package index and install DCGM
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        datacenter-gpu-manager-4-cuda12 && \
+        datacenter-gpu-manager-4-cuda13 && \
     rm -rf /var/lib/apt/lists/*
 
 # Reset DEBIAN_FRONTEND
